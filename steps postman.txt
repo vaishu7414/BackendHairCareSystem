@@ -1,0 +1,114 @@
+Register Customer
+POST http://127.0.0.1:8080/api/auth/register
+{
+"name":"pooja",
+"email":"pooja@gmail.com",
+"password":"pooja123",
+}
+-----------------
+Login Customer
+POST http://127.0.0.1:8080/api/auth/login
+{
+"email":"pooja@gmail.com",
+"password":"pooja123",
+}
+-----------
+To see all products first login
+GET http://127.0.0.1:8080/api/products
+
+------------------
+
+To add products first login admin
+POST http://127.0.0.1:8080/api/auth/login
+{
+"email":"admin@haircare.com",
+"password":"Admin@123"
+}
+
+----------------
+To add product single at a time
+POST http://127.0.0.1:8080/api/products
+
+  {
+    "name": "Anti Hair Fall Shampoo",
+    "description": "Reduces hair fall and strengthens roots with natural ingredients.",
+    "price": 299.99,
+    "hairType": "DRY",
+    "stock": 50
+  }
+
+  {
+    "name": "Deep Nourishing Conditioner",
+    "description": "Provides deep nourishment and smoothness for rough and dry hair.",
+    "price": 249.50,
+    "hairType": "DRY",
+    "stock": 30
+  }
+
+  {
+    "name": "Oil Control Shampoo",
+    "description": "Controls excess oil and keeps scalp fresh all day.",
+    "price": 199.00,
+    "hairType": "OILY",
+    "stock": 40
+  }
+
+  {
+    "name": "Herbal Hair Oil",
+    "description": "Promotes hair growth and improves scalp health.",
+    "price": 349.75,
+    "hairType": "CURLY",
+    "stock": 25
+  }
+
+  {
+    "name": "Damage Repair Mask",
+    "description": "Repairs damaged hair and restores shine and strength.",
+    "price": 499.99,
+    "hairType": "DAMAGED",
+    "stock": 20
+  }
+-----------------
+To see products login customer
+
+GET http://127.0.0.1:8080/api/products
+
+-----------------
+To add cart item login customer
+POST http://127.0.0.1:8080/api/cart/items
+
+{
+    "productId":1,
+    "quantity":2
+}
+
+------------------
+carts products added by customer
+GET http://127.0.0.1:8080/api/cart
+------------
+To see earlier order of customer first login
+
+GET http://127.0.0.1:8080/api/orders/my
+--------------------
+
+To place order 
+
+POST http://127.0.0.1:8080/api/orders/place
+------------------
+Again see order placed product
+
+http://127.0.0.1:8080/api/orders/my
+
+------------------------
+To do payment for current order
+POST http://127.0.0.1:8080/api/payments/order/1
+{
+    "method":"upi"
+}
+
+
+
+
+
+
+
